@@ -3,14 +3,13 @@ package org.example;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-/**
- * Hello world!
- *
- */
-public class App
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+public class App {
+    public static void main(String[] args) {
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring.xml");
+        Byname byname = applicationContext.getBean(Byname.class);
+        System.out.println(byname.getAge());
+        System.out.println(byname.getName());
+        byname.actoreName();
+
     }
 }
